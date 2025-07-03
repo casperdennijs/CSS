@@ -104,6 +104,7 @@ main > section > section#code > div {
 
 section#one section#preview > div > section {
     height: 1000px;
+    background-color: yellow;
 }
 
 section#one section#preview > div > div {
