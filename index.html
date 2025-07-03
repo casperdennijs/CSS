@@ -36,7 +36,27 @@
             </section>
             <section id="code">
                 <div>
+                    <pre>
+section > div {
+    height: 10px;
+    width: 0%;
+    background-color: green;
+    position: sticky;
+    top: -1rem;
+    left: 0;
+    animation: progress auto linear;
+    animation-timeline: --fullPageScroll;
+    margin-bottom: -10px;
+}
 
+section {
+    scroll-timeline: --fullPageScroll block;
+}
+
+@keyframes progress {
+    to { width: 100% }
+}
+                    </pre>
                 </div>
             </section>
         </section>

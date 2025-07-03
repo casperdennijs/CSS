@@ -99,7 +99,7 @@ main > section > section#code > div {
     width: 100%;
     border-radius: 10px;
     padding: 1rem;
-    overflow-y: scroll;
+    font-size: 1.2em;
 }
 
 section#one section#preview > div > section {
