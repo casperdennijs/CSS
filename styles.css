@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body, main, main > section {
+    height: 100%;
+}
+
+body {
+    background: #2A7B9B;
+    background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+    background-attachment: fixed;
+}
+
+main > section {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main > section > section {
+    display: none;
+    background-color: #202020;
+    color: #fff;
+    width: 100%;
+    border-top: 2px solid #202020;
+    padding: 2rem;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+    box-shadow: 0px 10px 5px -2px rgba(0,0,0,0.25);
+}
+
+main > section > fieldset {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: unset;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+}
+
+main > section > fieldset label {
+    width: 100%;
+    background-color: #101010;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+main > section > fieldset label:hover {
+    background-color: #151515;
+}
+
+main > section > fieldset label:has(input:checked) {
+    background-color: #202020;
+}
+
+main > section:has(#preview:checked) > section#preview {
+    display: block;
+}
+
+main > section:has(#code:checked) > section#code {
+    display: block;
+}
+
+main > section > fieldset input[type="radio"] {
+    display: none;
+}
+
+main > section > h1 {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 2rem;
+}
+
+main > section > section#preview div {
+    background-color: #fff;
+    color: #000;
+    max-height: 400px;
+    height: 100vh;
+    width: 100%;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+main > section >  section#code div {
+    background-color: #303030;
+    max-height: 400px;
+    height: 100vh;
+    width: 100%;
+    border-radius: 10px;
+    padding: 1rem;
+}
