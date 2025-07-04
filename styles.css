@@ -60,6 +60,7 @@ main > section > fieldset label {
 
 main > section > fieldset label:hover {
     background-color: #151515;
+    cursor: pointer;
 }
 
 main > section > fieldset label:has(input:checked) {
