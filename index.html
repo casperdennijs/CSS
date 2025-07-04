@@ -61,7 +61,7 @@ section {
             </section>
         </section>
         <section id="two">
-            <h1>#2 - Anchor positioning</h1>
+            <h1>#2 - Anchor positioning API</h1>
             <fieldset>
                 <label>
                     <input type="radio" name="two" id="preview" checked>
@@ -74,12 +74,44 @@ section {
             </fieldset>
             <section id="preview">
                 <div>
-
+                    <h2>Anchor positioning API</h2>
+                    <p>De CSS Anchor Positioning API is een nieuwe webtechniek waarmee je elementen op een pagina kunt positioneren ten opzichte van andere elementen (de zogenaamde “anchors”). Dit biedt meer controle en flexibiliteit bij het maken van dynamische layouts, zonder dat je JavaScript nodig hebt.</p>
+                    <br>
+                    <p>Met deze API kun je bijvoorbeeld een tooltip, dropdown of label relatief aan een ander element positioneren, zelfs als dat element op een andere plek in de DOM staat. Je gebruikt hiervoor het <code>anchor-name</code> en <code>anchor()</code> in je CSS.</p>
+                    <br>
+                    <div></div>
+                    <br>
+                    <p>Momenteel gebruik ik de anchor functie om vanuit de top en left hoeken het ::after element te verplaatsen in hoek rechtsonder</p>
+                    <pre>
+top: anchor(bottom);
+left: anchor(right); 
+                    </pre>
+                    <br>
                 </div>
             </section>
             <section id="code">
                 <div>
+                    <pre>
+div {
+    height: 100px;
+    width: 100px;
+    background-color: yellow;
+    margin: 50px;
+    anchor-name: --anchor-el;
+}
 
+div::after {
+    position-anchor: --anchor-el;
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+    display: block;
+    content: "";
+    position: absolute;
+    top: anchor(bottom);
+    left: anchor(right);
+}
+                    </pre>
                 </div>
             </section>
         </section>

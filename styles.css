@@ -6,6 +6,8 @@
 
 html, body, main, main > section {
     height: 100%;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -23,6 +25,7 @@ main > section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    scroll-snap-align: start;
 }
 
 main > section > section {
@@ -126,4 +129,24 @@ section#one section#preview > div {
 
 @keyframes progress {
   to { width: 100% }
+}
+
+section#two section#preview > div > div {
+    height: 100px;
+    width: 100px;
+    background-color: yellow;
+    margin: 50px;
+    anchor-name: --anchor-el;
+}
+
+section#two section#preview > div > div::after {
+    position-anchor: --anchor-el;
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+    display: block;
+    content: "";
+    position: absolute;
+    top: anchor(bottom);
+    left: anchor(right);
 }
