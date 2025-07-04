@@ -86,7 +86,6 @@ section {
 top: anchor(bottom);
 left: anchor(right); 
                     </pre>
-                    <br>
                 </div>
             </section>
             <section id="code">
@@ -129,12 +128,57 @@ div::after {
             </fieldset>
             <section id="preview">
                 <div>
-
+                    <h2>:has() selector</h2>
+                    <p>Met de :has selector kan je vanaf nu aangeven om een element aan te passen op basis van een criteria die binnen het element voldaan wordt. Als voorbeeld gebruik ik een formulier waarbij we checken of de algemene voorwaarden checkbox aangevinkt is. Wanneer dit zo is laten we namelijk pas de voltooi button zien.</p>
+                    <br>
+                    <form>
+                        <label>
+                            <input type="checkbox" required>
+                            Ga je akkoord met de algemene voorwaarden *
+                        </label>
+                        <button type="submit">Voltooien</button>
+                    </form>
+                    <br>
+                    <p>Door de :has selector te gebruiken hebben we geen verdere JavaScript nodig om de Voltooien button te tonen en kunnen we doormiddel van CSS controleren of iets is ingevuld.</p>
+                    <br>
+                    <p>Verder heb ik de :has selector() over deze hele website gebruikt om te bepalen of je de preview of code moet zien per categorie. Dit doe ik doormiddel van een fieldset met radio buttons waarin ik kijk welke radio button met welke id checked is om zo de juiste content te tonen.</p>
                 </div>
             </section>
             <section id="code">
                 <div>
+                    <pre>
+/* Voorbeeld in de preview */
+form button {
+    display: none;
+}
 
+form:has(input[type="checkbox"]:checked) button {
+    display: block;
+}
+
+
+
+/* Preview & code tabs */
+main > section > section {
+    display: none;
+    background-color: #202020;
+    color: #fff;
+    width: 100%;
+    border-top: 2px solid #202020;
+    padding: 2rem;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+    box-shadow: 0px 10px 5px -2px rgba(0,0,0,0.25);
+}
+
+main > section:has(input#preview:checked) > section#preview {
+    display: block;
+}
+
+main > section:has(input#code:checked) > section#code {
+    display: block;
+}
+                    </pre>
                 </div>
             </section>
         </section>
