@@ -9,6 +9,7 @@ body {
 
 html {
     scroll-timeline: --page-scroll block;
+    overflow-y: hidden;
 }
 
 html,
@@ -120,92 +121,178 @@ label {
 @keyframes step1 {
     0% {
         background-color: white;
+        color: black;
     }
     20% {
         background-color: white;
+        color: black;
     }
     20.1% {
         background-color: black;
+        color: white;
     }
     100% {
         background-color: black;
+        color: white;
     }
 }
 
 @keyframes step2 {
     0% {
         background-color: black;
+        color: white;
     }
     19.9% {
         background-color: black;
+        color: white;
     }
     20% {
         background-color: white;
+        color: black;
     }
     40% {
         background-color: white;
+        color: black;
     }
     40.1% {
         background-color: black;
+        color: white;
     }
     100% {
         background-color: black;
+        color: white;
     }
 }
 
 @keyframes step3 {
     0% {
         background-color: black;
+        color: white;
     }
     39.9% {
         background-color: black;
+        color: white;
     }
     40% {
         background-color: white;
+        color: black;
     }
     60% {
         background-color: white;
+        color: black;
     }
     60.1% {
         background-color: black;
+        color: white;
     }
     100% {
         background-color: black;
+        color: white;
     }
 }
 
 @keyframes step4 {
     0% {
         background-color: black;
+        color: white;
     }
     59.9% {
         background-color: black;
+        color: white;
     }
     60% {
         background-color: white;
+        color: black;
     }
     80% {
         background-color: white;
+        color: black;
     }
     80.1% {
         background-color: black;
+        color: white;
     }
     100% {
         background-color: black;
+        color: white;
     }
 }
 
 @keyframes step5 {
     0% {
         background-color: black;
+        color: white;
     }
     79.9% {
         background-color: black;
+        color: white;
     }
     80% {
         background-color: white;
+        color: black
     }
     100% {
         background-color: white;
+        color: black;
     }
+}
+
+form section:has(*:placeholder-shown) a {
+    display: none;
+}
+
+form:has(.q1 *:placeholder-shown) .q2 {
+    visibility: hidden;
+}
+
+form:has(.q2 *:placeholder-shown) .q3 {
+    visibility: hidden;
+}
+
+form:has(.q3 *:placeholder-shown) .q4 {
+    visibility: hidden;
+}
+
+form:has(.q4 *:placeholder-shown) .q5 {
+    visibility: hidden;
+}
+
+body:has(.q1 *:placeholder-shown) .step2 {
+    pointer-events: none;
+    text-decoration: none;
+}
+
+body:has(.q2 *:placeholder-shown) .step3 {
+    pointer-events: none;
+    text-decoration: none;
+}
+
+body:has(.q3 *:placeholder-shown) .step4 {
+    pointer-events: none;
+    text-decoration: none;
+}
+
+body:has(.q4 *:placeholder-shown) .step5 {
+    pointer-events: none;
+    text-decoration: none;
+}
+
+i {
+    text-decoration: none;
+    font-style: normal;
+    display: inline-block;
+    anchor-name: --tooltip;
+}
+
+i[data-tooltip]:hover::before {
+    content: attr(data-tooltip);
+    display: block;
+    position: absolute;
+    position-anchor: --tooltip;
+    position-area: start end;
+    background-color: red;
+    max-width: 300px;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px 10px 10px 0;
 }
